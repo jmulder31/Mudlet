@@ -135,9 +135,9 @@ end</script>
 				<script>if pSec.Enabled then
   pSec.criminals = matches[2]
   if(tonumber(pSec.criminals) &gt; 0) then
-      cecho(" - &lt;white_smoke&gt;Crime: &lt;red&gt;"..pSec.criminals)
+      cecho(" - &lt;white_smoke&gt;Criminals: &lt;red&gt;"..pSec.criminals)
     else
-      cecho(" - &lt;white_smoke&gt;Crime: "..pSec.criminals)
+      cecho(" - &lt;white_smoke&gt;Criminals: "..pSec.criminals)
   end
 end</script>
 				<triggerType>0</triggerType>

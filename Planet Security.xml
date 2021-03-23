@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Planet Security</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>pSec.gagshowplanet</name>
+				<script>if gagshowplanet == true then
+  deleteLine()
+else
+  return
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>pSec.stopgaggingshowplanet.firstline</name>
+					<script>setTriggerStayOpen("GagShowplanetfirstline", 0)</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>--Planet Data: -------------------------------</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>pSec.gagshowplanet.body</name>
+					<script>if gagshowplanet == true then
+  deleteLine()
+else
+  return
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>(.*)</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>CurrentPlanet</name>
+				<script>if pSec.Enabled then
+  cecho("\n&lt;DeepSkyBlue&gt;"..matches[2])
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Planet: (.*)</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Crime</name>
+				<script>if pSec.Enabled then
+  pSec.crimerate = matches[2]
+  if(tonumber(pSec.crimerate) &gt; 0) then
+      cecho(" - &lt;white_smoke&gt;Crime: &lt;red&gt;"..pSec.crimerate)
+    else
+      cecho(" - &lt;white_smoke&gt;Crime: "..pSec.crimerate)
+  end
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Crime Rate:         (\d\d\d)</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Criminals</name>
+				<script>if pSec.Enabled then
+  pSec.criminals = matches[2]
+  if(tonumber(pSec.criminals) &gt; 0) then
+      cecho(" - &lt;white_smoke&gt;Crime: &lt;red&gt;"..pSec.criminals)
+    else
+      cecho(" - &lt;white_smoke&gt;Crime: "..pSec.criminals)
+  end
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Active Criminals: (\d\d\d)</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+	</TriggerPackage>
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>Planet Security</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>Planetary AI Check</name>
+				<script>gagshowplanet = true
+pSec.Enabled = true
+
+for i = 1, #pSec.planets do
+  send("showplanet "..pSec.planets[i].." ai", false)
+  tempTimer(1, [[gagshowplanet = false]])
+end
+
+cecho("\n&lt;dodger_blue&gt;---Initiating Planet Scan---\n")
+tempTimer(1, [[cecho("\n&lt;dodger_blue&gt;---Planet Scan Complete---\n")]])
+tempTimer(2, [[pSec.Enabled = false]])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>pSecScan</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Planetary AI All Check</name>
+				<script>gagshowplanet = true
+pSec.Enabled = true
+
+for i = 1, #pSec.fullPlanets do
+  send("showplanet "..pSec.fullPlanets[i].." ai", false)
+  tempTimer(#pSec.fullPlanets / 2, [[gagshowplanet = false]])
+end
+
+cecho("\n&lt;dodger_blue&gt;---Initiating Planet Scan---\n")
+tempTimer(5, [[cecho("\n&lt;dodger_blue&gt;---Planet Scan Complete---\n")]])
+tempTimer(10, [[pSec.Enabled = false]])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>pSecAll</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Planet Add</name>
+				<script>pSec.planets = pSec.planets or {}
+table.insert(pSec.planets, matches[2])
+cecho(matches[2] .. "&lt;dodger_blue&gt; added.\n")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>pSecAdd (.*)</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Clear Planets</name>
+				<script>for k in pairs (pSec.planets) do
+    pSec.planets [k] = nil
+end
+cecho(matches[2] .. "&lt;dodger_blue&gt; Planets cleared.\n")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>pSecClear</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Planet Security Help</name>
+				<script>cecho("\n&lt;dodger_blue&gt;Planet Security, an automated script to provide Crime reports for specified/all planets\n \n")
+cecho("&lt;dodger_blue&gt;pSecAdd &lt;planet&gt;         - Add planet to custom scan list\n")
+cecho("&lt;dodger_blue&gt;pSecClear                - Clear custom scan list\n")
+cecho("&lt;dodger_blue&gt;pSecScan                 - Initiates planet scan for custom list\n")
+cecho("&lt;dodger_blue&gt;pSecAll                  - Initiates planet scan for full galaxy list\n")
+cecho("&lt;dodger_blue&gt;pSec help                - Shows this helpfile\n")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>pSec help</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+	<VariablePackage>
+		<VariableGroup>
+			<name>pSec</name>
+			<keyType>4</keyType>
+			<value></value>
+			<valueType>5</valueType>
+			<Variable>
+				<name>crimerate</name>
+				<keyType>4</keyType>
+				<value>002</value>
+				<valueType>4</valueType>
+			</Variable>
+			<Variable>
+				<name>criminals</name>
+				<keyType>4</keyType>
+				<value>000</value>
+				<valueType>4</valueType>
+			</Variable>
+			<Variable>
+				<name>Enabled</name>
+				<keyType>4</keyType>
+				<value>false</value>
+				<valueType>1</valueType>
+			</Variable>
+			<VariableGroup>
+				<name>fullPlanets</name>
+				<keyType>4</keyType>
+				<value></value>
+				<valueType>5</valueType>
+				<Variable>
+					<name>1</name>
+					<keyType>3</keyType>
+					<value>Alderaan</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>2</name>
+					<keyType>3</keyType>
+					<value>Akrania</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>3</name>
+					<keyType>3</keyType>
+					<value>Bespin</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>4</name>
+					<keyType>3</keyType>
+					<value>Corellia</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>5</name>
+					<keyType>3</keyType>
+					<value>Coruscant</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>6</name>
+					<keyType>3</keyType>
+					<value>Dac</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>7</name>
+					<keyType>3</keyType>
+					<value>Dantooine</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>8</name>
+					<keyType>3</keyType>
+					<value>Ithor</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>9</name>
+					<keyType>3</keyType>
+					<value>Kashyyyk</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>10</name>
+					<keyType>3</keyType>
+					<value>Korriban</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>11</name>
+					<keyType>3</keyType>
+					<value>Lorrd</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>12</name>
+					<keyType>3</keyType>
+					<value>Mandalore</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>13</name>
+					<keyType>3</keyType>
+					<value>Naboo</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>14</name>
+					<keyType>3</keyType>
+					<value>Nal Hutta</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>15</name>
+					<keyType>3</keyType>
+					<value>Nim Drovis</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>16</name>
+					<keyType>3</keyType>
+					<value>Ord Mantel</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>17</name>
+					<keyType>3</keyType>
+					<value>Ryloth</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>18</name>
+					<keyType>3</keyType>
+					<value>Tatooine</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>19</name>
+					<keyType>3</keyType>
+					<value>Wroona</value>
+					<valueType>4</valueType>
+				</Variable>
+			</VariableGroup>
+			<VariableGroup>
+				<name>planets</name>
+				<keyType>4</keyType>
+				<value></value>
+				<valueType>5</valueType>
+				<Variable>
+					<name>1</name>
+					<keyType>3</keyType>
+					<value>Alderaan</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>2</name>
+					<keyType>3</keyType>
+					<value>Corellia</value>
+					<valueType>4</valueType>
+				</Variable>
+				<Variable>
+					<name>3</name>
+					<keyType>3</keyType>
+					<value>Coruscant</value>
+					<valueType>4</valueType>
+				</Variable>
+			</VariableGroup>
+	</VariablePackage>
+</MudletPackage>

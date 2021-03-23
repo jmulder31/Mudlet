@@ -181,7 +181,7 @@ tempTimer(1, [[cecho("\n&lt;dodger_blue&gt;---Planet Scan Complete---\n")]])
 tempTimer(2, [[pSec.Enabled = false]])</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>pSecScan</regex>
+				<regex>^pSecScan$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>Planetary AI All Check</name>
@@ -198,7 +198,7 @@ tempTimer(5, [[cecho("\n&lt;dodger_blue&gt;---Planet Scan Complete---\n")]])
 tempTimer(10, [[pSec.Enabled = false]])</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>pSecAll</regex>
+				<regex>^pSecAll$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>Planet Add</name>
@@ -207,7 +207,7 @@ table.insert(pSec.planets, matches[2])
 cecho(matches[2] .. "&lt;dodger_blue&gt; added.\n")</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>pSecAdd (.*)</regex>
+				<regex>^pSecAdd (.*)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>Clear Planets</name>
@@ -217,7 +217,7 @@ end
 cecho(matches[2] .. "&lt;dodger_blue&gt; Planets cleared.\n")</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>pSecClear</regex>
+				<regex>^pSecClear$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>Planet Security Help</name>
@@ -229,7 +229,7 @@ cecho("&lt;dodger_blue&gt;pSecAll                  - Initiates planet scan for f
 cecho("&lt;dodger_blue&gt;pSec help                - Shows this helpfile\n")</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>pSec help</regex>
+				<regex>^pSec help$</regex>
 			</Alias>
 		</AliasGroup>
 	</AliasPackage>
